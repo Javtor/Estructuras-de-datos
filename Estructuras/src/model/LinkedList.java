@@ -60,32 +60,35 @@ public class LinkedList<T> implements ILinkedList<T> {
 
 	@Override
 	public int search(T t) {
-		// TODO Auto-generated method stub
-		return 0;
+		return first == null || t == null ? -1 : first.search(t, 0);
 	}
 
 	@Override
 	public void deleteFirst() {
-		// TODO Auto-generated method stub
+		if (first != null) {
+			first = first.getNext();
+		}
 
 	}
 
 	@Override
 	public void deleteLast() {
-		// TODO Auto-generated method stub
-
+		if (first != null) {
+			first = first.deleteLast();
+		}
 	}
 
 	@Override
 	public void delete(T t) {
-		// TODO Auto-generated method stub
-
+		if (first != null && t != null) {
+			first = first.delete(t);
+		}
 	}
-	
-	@Override
-	public void delete(int index) throws LinkedListException{
-		// TODO Auto-generated method stub
 
+	@Override
+	public void delete(int index) throws LinkedListException {
+		T t = get(index);
+		delete(t);
 	}
 
 	@Override
@@ -96,6 +99,14 @@ public class LinkedList<T> implements ILinkedList<T> {
 	@Override
 	public boolean isEmpty() {
 		return size == 0;
+	}
+
+	@Override
+	public T get(int index) throws LinkedListException {
+		if (index >= 0 && index < size) {
+			return first.get(index, 0);
+		} else
+			throw new LinkedListException("Index out of bounds");
 	}
 
 }

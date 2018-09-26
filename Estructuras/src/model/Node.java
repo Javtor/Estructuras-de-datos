@@ -67,18 +67,43 @@ public class Node<T> {
 	}
 
 	public int search(T t, int currentIndex) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (value != null && value.equals(t))
+			return currentIndex;
+		else {
+			if (next != null)
+				return next.search(t, currentIndex + 1);
+			else
+				return -1;
+		}
 	}
 
-	public void deleteLast() {
-		// TODO Auto-generated method stub
+	public Node<T> deleteLast() {
+		if (next == null)
+			return null;
+		else {
+			this.next = next.deleteLast();
+			return this;
+		}
+	}
+
+	public Node<T> delete(T t) {
+		if(value != null && value.equals(t)) return next;
+		else{
+			if(next != null) {
+				next = next.delete(t);
+			}
+			return this;
+		}
 
 	}
 
-	public void delete(T t) {
-		// TODO Auto-generated method stub
-
+	public T get(int index, int currentIndex) {
+		if (index == currentIndex) {
+			return value;
+		} else {
+			if(next == null) return null;
+			return next.get(index, currentIndex+1);
+		}
 	}
 
 }

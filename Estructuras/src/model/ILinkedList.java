@@ -16,6 +16,8 @@ public interface ILinkedList <T> {
 	
 	public int search(T t);
 	
+	public T get(int index) throws LinkedListException;
+	
 	public void deleteFirst();
 	
 	public void deleteLast();
