@@ -3,6 +3,7 @@ package model;
 public class NodeBinaryTree<T> {
 
 	private T value;
+	private Node<T> parent;
 	private Node<T> left;
 	private Node<T> right;
 	
@@ -32,7 +33,7 @@ public class NodeBinaryTree<T> {
 		this.left = left;
 	}
 
-	public boolean isLeave() {
+	public boolean isLeaf() {
 		return (left==null && right==null);
 	}
 	

@@ -9,15 +9,18 @@ public class BinaryTree<T> implements IBinaryTree {
 	}
 
 	@Override
-	public Node deleteNode(Object node) {
+	public NodeBinaryTree deleteNode(Object node) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Node searchNode(Object node) {
+	public NodeBinaryTree searchNode(Object node) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+	
 
 }

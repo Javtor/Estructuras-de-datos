@@ -4,8 +4,8 @@ public interface IBinaryTree<T> {
 
 	public void addNode(T node);
 	
-	public Node<T> deleteNode(T node);
+	public NodeBinaryTree<T> deleteNode(T node);
 	
-	public Node<T> searchNode(T node);
+	public NodeBinaryTree<T> searchNode(T node);
 	
 }
